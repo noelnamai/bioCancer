@@ -22,12 +22,9 @@
       <h1>
 <a id="biocancer---interactive-multi-omics-cancers-data-visualization-and-analysis" class="anchor" href="#biocancer---interactive-multi-omics-cancers-data-visualization-and-analysis" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>bioCancer - Interactive Multi-OMICS Cancers Data Visualization and Analysis</h1>
 
-<p><a href="https://travis-ci.org/kmezhoud/bioCancer"><img src="https://travis-ci.org/kmezhoud/bioCancer.svg?branch=master" alt="Travis-CI Build Status"></a> by Karim Mezhoud</p>
+<p><a href="https://travis-ci.org/kmezhoud/bioCancer"><img src="https://travis-ci.org/kmezhoud/bioCancer.svg?branch=master" alt="Travis-CI Build Status"></a> <a href="https://coveralls.io/r/kmezhoud/bioCancer?branch=master"><img src="https://img.shields.io/coveralls/kmezhoud/bioCancer.svg" alt="Coverage Status"></a> </p>
 
-
-
-<p><a href="http://kmezhoud.github.io/bioCancer/">bioCancer</a> is a browser-based interface for Cancer Genomics Data analytics in <a href="http://www.r-project.org/">R</a>, based on the <a href="http://www.rstudio.com/shiny/">Shiny</a> package. bioCancer is hosted at 
-<a href="http://46.101.227.144:3838/bioCancer/">http://46.101.227.144:3838/bioCancer/</a></p>
+<p><a href="http://kmezhoud.github.io/bioCancer/">bioCancer</a> is a browser-based interface for Cancer Genomics Data analysis and visualization developped by <a href="http://www.r-project.org/">R</a>, and based on the <a href="http://www.rstudio.com/shiny/">Shiny</a> package. Example of bioCancer server is hosted at <a href="http://46.101.227.144:3838/bioCancer/">http://46.101.227.144:3838/bioCancer/</a></p>
 
 
 
@@ -38,17 +35,6 @@
 
 <p><img src="./demoReactome.gif"></p>
 
-<h2>
-<a id="key-features" class="anchor" href="#key-features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Key features</h2>
-
-<ul>
-<li>Explore: Quickly and easily summarize, visualize, and analyze your data</li>
-<li>Cross-platform: It runs in a browser on Windows, Mac, and Linux</li>
-<li>Reproducible: Recreate results and share work with others as a state file or an <a href="http://rmarkdown.rstudio.com/">Rmarkdown</a> report</li>
-<li>Programming: Integrate bioCancer's analysis functions into your own R-code</li>
-<li>Context: Data and examples focus on business applications</li>
-</ul>
-
 
 
 <h4>
@@ -56,15 +42,9 @@
 
 <p>bioCancer is listening user setting. Results update immediately when inputs are changed (i.e., no separate dialog boxes).</p>
 
-<h4>
-<a id="reproducible" class="anchor" href="#reproducible" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Reproducible</h4>
 
-<p>Simply saving output is not enough. You need the ability to recreate results for the same data and/or when new data become available. Moreover, others may want to review your analysis and results. Save and load the state of the application to continue your work at a later time or on another computer. Share state files with others and create reproducible reports using <a href="http://rmarkdown.rstudio.com/">Rmarkdown</a>. See also the section on <code>Saving and loading state</code> below</p>
 
-<h4>
-<a id="programming" class="anchor" href="#programming" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Programming</h4>
 
-<p>Although bioCancer's web-interface can handle quite a few data and analysis tasks, at times you may prefer to write your own code. bioCancer provides a bridge to programming in R(studio) by exporting the functions used for analysis. For more information about programming, see Radiant <a href="http://vnijs.github.io/radiant/programming.html">programming</a> page on the documentation site.</p>
 
 <h4>
 <a id="context" class="anchor" href="#context" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Context</h4>
@@ -93,26 +73,14 @@
 
 <p>Documentation and tutorials are available in the bioCancer web interface (the <code>?</code> icons and the <code>Help</code> menu).</p>
 
-<h2>
-<a id="saving-and-loading-state-from-biocancer" class="anchor" href="#saving-and-loading-state-from-biocancer" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Saving and loading state from bioCancer</h2>
 
-<p>To save your analyses save the state of the app to a file by clicking on the <i title="Save"></i> icon in the navbar and then on <code>Save state</code> (see also the <code>Data &gt; Handle &gt; Manage</code> tab). You can open this state file at a later time or on another computer to continue where you left off. You can also share the file with others that may want to replicate your analyses. As an example, load the state_file <a href="https://github.com/vnijs/radiant/blob/master/inst/examples/RadiantState.rda?raw=true"><code>example.rda</code></a> through the Data &gt; Manage tab. Go to <code>Handle &gt; View</code>, <code>Handle &gt; Visualize</code> to see some of the settings. There is also a report in <code>R &gt; Report</code> that was created using the bioCancer interface. The html file <a href="https://github.com/vnijs/radiant/blob/master/inst/examples/RadiantState.html?raw=true"><code>ExampleState.html</code></a> contains the output.</p>
-
-<p>Loading and saving state also works with Rstudio. If you start bioCancer from Rstudio and use <i title="Power off"></i> &gt; <code>Stop</code> to stop the app, lists called <code>r_data</code> and <code>r_state</code> will be put into Rstudio's global workspace. If you start bioCancer again using <code>bioCancer()</code> it will use these lists to restore state. This can be convenient if you want to make changes to a data file in Rstudio and load it back into bioCancer. Also, if you load a state file directly into Rstudio it will be used when you start bioCancer to recreate a previous state.</p>
-
-<div class="highlight highlight-source-r"><pre>numericInput(<span class="pl-s"><span class="pl-pds">"</span>sm_comp_value<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>Comparison value:<span class="pl-pds">"</span></span>, state_init(<span class="pl-s"><span class="pl-pds">'</span>sm_comp_value<span class="pl-pds">'</span></span>,<span class="pl-smi">sm_args</span><span class="pl-k">$</span><span class="pl-smi">comp_value</span>))</pre></div>
 
 <h2>
 <a id="acknowledgment" class="anchor" href="#acknowledgment" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Acknowledgment</h2>
 
 <p>bioCancer is a collaborative work . Handle panel is adapted from <a href="https://github.com/vnijs/radiant">radiant</a>. I would like to thank <a href="http://rady.ucsd.edu/faculty/directory/nijs/" target="\_blank"> Dr. Vincent Nijs</a> for sharing his work for R community.</p>
 
-<h2>
-<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
 
-<p>bioCancer is licensed under the <a href="http://www.tldrlegal.com/l/AGPL3" target="\_blank">AGPLv3</a>. The documentation and videos on this site and the bioCancer help files are licensed under the creative commons attribution, non-commercial, share-alike license <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC-NC-SA</a>.</p>
-
-<p>As a summary, the AGPLv3 license requires, attribution, including copyright and license information in copies of the software, stating changes if the code is modified, and disclosure of all source code.</p>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/kmezhoud/bioCancer">bioCancer</a> is maintained by <a href="https://github.com/kmezhoud">kmezhoud</a>.</span>
